@@ -1,0 +1,2 @@
+'use strict';function a(r={}){let o=r.endpoint||"/api/log",t=(e,i)=>{let n=JSON.stringify({level:e,...i});typeof navigator<"u"&&navigator.sendBeacon?navigator.sendBeacon(o,n):fetch(o,{method:"POST",body:n,headers:{"Content-Type":"application/json"},keepalive:true}).catch(console.error);};return {info:e=>t("INFO",e),warn:e=>t("WARN",e),error:e=>t("ERROR",e)}}var c=a();exports.clientLogger=c;exports.createClientLogger=a;//# sourceMappingURL=client.js.map
+//# sourceMappingURL=client.js.map

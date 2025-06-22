@@ -1,0 +1,48 @@
+{
+  "name": "@najibsaurus/loggersaurus",
+  "version": "1.0.0",
+  "main": "./dist/index.js", 
+  "module": "./dist/index.mjs", 
+  "types": "./dist/index.d.ts", 
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client.mjs",
+      "require": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist" 
+  ],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "keywords": [
+    "nextjs",
+    "logging",
+    "logger",
+    "structured-logging"
+  ],
+  "author": "NajibSaurus",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Najibsaurus/loggersaurus.git"
+  },
+  "license": "MIT",
+  "description": "A simple structured logger for Next.js applications.",
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "react": "^19.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
+}
