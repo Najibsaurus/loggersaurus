@@ -20,7 +20,7 @@ class Logger {
     };
 
     if (process.env.NODE_ENV === "production") {
-      console.log(JSON.stringify(formattedLog));
+      console.log(`[${formattedLog.level}] - ${JSON.stringify(formattedLog)}`);
     } else {
       const colorMap = {
         [LogLevel.INFO]: "\x1b[34m", // Blue
@@ -31,7 +31,8 @@ class Logger {
       };
       const color = colorMap[level] || colorMap.reset;
       console.log(
-        `<span class="math-inline">\{color\}\[</span>{level}] - <span class="math-inline">\{formattedLog\.action\}</span>{colorMap.reset}`,
+        `${color}[${formattedLog.level}]` +
+          `${colorMap.reset} - ${formattedLog.action}`,
         formattedLog
       );
     }
